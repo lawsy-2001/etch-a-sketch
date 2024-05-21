@@ -3,14 +3,33 @@
   margin: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  background-color: darkred;
+}
+
+header {
+  font-size: 50px;
+  font-family: cursive;
+  color: goldenrod;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+
 div {
   border: solid 0.5px lightgrey;
   flex: 1;
+  background-color: white;
 }
 
 .grid-container {
-  height: 800px;
-  width: 800px;
+  max-height: 700px;
+  min-height: 700px;
+  max-width: 700px;
+  min-width: 700px;
   border: solid 3px black;
   display: flex;
   flex-wrap: wrap;
@@ -26,6 +45,27 @@ div {
   flex: 1;
 }
 
-.col:hover {
+.hover {
   background-color: black;
+}
+
+.btn-container {
+  width: 700px;
+  max-height: 40px;
+  background-color: darkred;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  background-color: black;
+  color: goldenrod;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 12px;
 }

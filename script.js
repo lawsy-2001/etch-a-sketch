@@ -14,4 +14,4 @@ function drawGrid(squaresPerRow) {
   }
 }
 
-drawGrid();
+drawGrid(25);
