@@ -112,3 +112,16 @@ btnBlack.addEventListener('click', () => {
     );
   });
 });
+
+// eraser button code
+const btnEraser = document.querySelector('#eraser');
+
+btnEraser.addEventListener('click', () => {
+  const gridBox = document.querySelectorAll('#grid-box');
+
+  gridBox.forEach((box) => {
+    box.addEventListener('mouseenter', () =>
+      box.setAttribute('style', 'background: white;')
+    );
+  });
+});
