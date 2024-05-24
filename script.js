@@ -125,3 +125,18 @@ btnEraser.addEventListener('click', () => {
     );
   });
 });
+
+// colour button code
+const btnColour = document.querySelector('#colour');
+const pickedColour = document.querySelector('#colour-picker');
+
+btnColour.addEventListener('click', () => {
+  const gridBox = document.querySelectorAll('#grid-box');
+
+  gridBox.forEach((box) => {
+    box.addEventListener(
+      'mouseenter',
+      () => (box.style.backgroundColor = pickedColour.value)
+    );
+  });
+});
