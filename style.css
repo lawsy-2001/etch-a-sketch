@@ -45,10 +45,6 @@ div {
   flex: 1;
 }
 
-.hover {
-  background-color: black;
-}
-
 .btn-container {
   width: 700px;
   max-height: 40px;
@@ -68,4 +64,8 @@ div {
   font-size: 15px;
   font-weight: bold;
   border-radius: 12px;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
