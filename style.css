@@ -68,4 +68,5 @@ div {
 
 .btn:hover {
   cursor: pointer;
+  border: solid 2px white;
 }

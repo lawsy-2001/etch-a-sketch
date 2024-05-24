@@ -91,12 +91,12 @@ function generateNewColor() {
 const btnRandom = document.querySelector('#random');
 
 btnRandom.addEventListener('click', () => {
-  const newColour = generateNewColor();
+  let newColour = generateNewColor();
   document.querySelectorAll('#grid-box').forEach((box) => {
-    box.addEventListener(
-      'mouseenter',
-      () => (box.style.backgroundColor = newColour)
-    );
+    box.addEventListener('mouseenter', () => {
+      box.style.backgroundColor = newColour;
+      newColour = generateNewColor();
+    });
   });
 });
 
