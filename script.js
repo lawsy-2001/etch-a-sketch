@@ -95,6 +95,7 @@ btnRandom.addEventListener('click', () => {
   document.querySelectorAll('#grid-box').forEach((box) => {
     box.addEventListener('mouseenter', () => {
       box.style.backgroundColor = newColour;
+      box.style.opacity = 1;
       newColour = generateNewColor();
     });
   });
@@ -134,9 +135,29 @@ btnColour.addEventListener('click', () => {
   const gridBox = document.querySelectorAll('#grid-box');
 
   gridBox.forEach((box) => {
-    box.addEventListener(
-      'mouseenter',
-      () => (box.style.backgroundColor = pickedColour.value)
-    );
+    box.addEventListener('mouseenter', () => {
+      box.style.backgroundColor = pickedColour.value;
+      box.style.opacity = 1;
+    });
+  });
+});
+
+// shade button code
+const btnShade = document.querySelector('#shade');
+
+btnShade.addEventListener('click', () => {
+  const gridBox = document.querySelectorAll('#grid-box');
+
+  gridBox.forEach((box) => {
+    box.addEventListener('mouseenter', () => {
+      box.style.backgroundColor = 'black';
+      let currentOpacity = +box.style.opacity;
+      if (currentOpacity <= 0.9 && currentOpacity > 0) {
+        currentOpacity += 0.1;
+        box.style.opacity = currentOpacity;
+      } else if (currentOpacity === 0) {
+        box.style.opacity = 0.1;
+      }
+    });
   });
 });
