@@ -51,3 +51,64 @@ btnClear.addEventListener('click', () => {
     box.setAttribute('style', 'background: white;');
   });
 });
+
+//generate random colour
+const hexCharacters = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+];
+
+function getCharacter(index) {
+  return hexCharacters[index];
+}
+
+function generateNewColor() {
+  let hexColorRep = '#';
+
+  for (let index = 0; index < 6; index++) {
+    const randomPosition = Math.floor(Math.random() * hexCharacters.length);
+    hexColorRep += getCharacter(randomPosition);
+  }
+
+  return hexColorRep;
+}
+
+// random button code
+const btnRandom = document.querySelector('#random');
+
+btnRandom.addEventListener('click', () => {
+  const newColour = generateNewColor();
+  document.querySelectorAll('#grid-box').forEach((box) => {
+    box.addEventListener(
+      'mouseenter',
+      () => (box.style.backgroundColor = newColour)
+    );
+  });
+});
+
+// black button code
+const btnBlack = document.querySelector('#black');
+
+btnBlack.addEventListener('click', () => {
+  const gridBox = document.querySelectorAll('#grid-box');
+
+  gridBox.forEach((box) => {
+    box.addEventListener('mouseenter', () =>
+      box.setAttribute('style', 'background: black;')
+    );
+  });
+});
