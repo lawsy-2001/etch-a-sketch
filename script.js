@@ -42,3 +42,12 @@ btnResize.addEventListener('click', () => {
     drawGrid(userGridSize);
   }
 });
+
+// clear button code
+const btnClear = document.querySelector('#clear');
+
+btnClear.addEventListener('click', () => {
+  document.querySelectorAll('#grid-box').forEach((box) => {
+    box.setAttribute('style', 'background: white;');
+  });
+});
